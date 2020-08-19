@@ -7,26 +7,25 @@ import { format } from '../../utils/utils';
   shadow: true,
 })
 export class AppCard {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
 
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
-  }
+  @Prop() titulo: string;
+  @Prop() tipo: string;
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    if(this.tipo === 'option') {
+      return (
+        <div>
+          { this.titulo ? <h2>{this.titulo}</h2> : '' }
+          Card de Opção
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          { this.titulo ? <h2>{this.titulo}</h2> : '' }
+          Card de Informação
+        </div>
+      );
+    }
   }
 }

@@ -7,18 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppCard {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "tipo": string;
+        "titulo": string;
     }
 }
 declare global {
@@ -34,18 +24,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppCard {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "tipo"?: string;
+        "titulo"?: string;
     }
     interface IntrinsicElements {
         "app-card": AppCard;
